@@ -1,6 +1,6 @@
 import re
 
-
+# scanner python file
 def check_password(password):
     """
     Basic password security checker.
