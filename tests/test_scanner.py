@@ -15,3 +15,8 @@ def test_missing_uppercase():
 
 def test_strong_password():
     assert check_password("Password123!") == "Strong"
+
+
+def test_very_strong_password():
+    assert check_password("Password123!") == "Very Strong"
+    
