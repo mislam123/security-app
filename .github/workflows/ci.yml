@@ -53,4 +53,20 @@ jobs:
       - name: Run Bandit
         run: |
           bandit -r app
-          
+
+
+  docker:
+    name: Docker Build
+    runs-on: ubuntu-latest
+
+    needs:
+      - test
+      - security
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: |
+          docker build -t security-app:latest .
